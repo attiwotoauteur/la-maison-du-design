@@ -1,731 +1,1323 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#103b2b">
-<meta name="description" content="LA MAISON DU DESIGN : tenues africaines, sandales, onglerie, perruques et entretien. Découvrez nos collections et contactez-nous sur WhatsApp.">
-<title>LA MAISON DU DESIGN | L'élégance à votre image</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2b20">
+  <meta name="description" content="LA MAISON DU DESIGN : tenues africaines, sandales, onglerie et perruques. Découvrez nos collections et contactez-nous sur WhatsApp.">
+  <title>LA MAISON DU DESIGN | L'élégance à votre image</title>
 
-<style>
-:root {
-  --vert: #103b2b;
-  --vert-fonce: #08271c;
-  --or: #d5a64d;
-  --creme: #fbf5e9;
-  --blanc: #ffffff;
-  --texte: #29352e;
-  --gris: #68736b;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--creme);
-  color: var(--texte);
-  line-height: 1.7;
-}
-a { text-decoration: none; }
-img { max-width: 100%; display: block; }
-section { scroll-margin-top: 90px; }
+  <style>
+    :root {
+      --vert: #0b2b20;
+      --vert-clair: #174633;
+      --or: #c7953d;
+      --or-clair: #f0ca79;
+      --creme: #f8f2e7;
+      --blanc: #fffdf8;
+      --texte: #28352e;
+      --ombre: 0 12px 35px rgba(11, 43, 32, .10);
+    }
 
-.bandeau {
-  background: var(--vert-fonce);
-  color: white;
-  text-align: center;
-  padding: 8px 12px;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-header {
-  background: var(--vert);
-  color: white;
-  border-bottom: 2px solid var(--or);
-  position: relative;
-  z-index: 10;
-}
-.navigation {
-  max-width: 1450px;
-  margin: auto;
-  padding: 12px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-.identite {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 210px;
-}
-.identite img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-}
-.nom-marque {
-  color: #f5d58f;
-  font-family: Georgia, serif;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 1.25;
-}
-.slogan-marque {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #fff0cc;
-}
-.nav-liens {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-}
-.nav-liens a {
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-}
-.nav-liens a:hover { color: #f5cf78; }
-.bouton-or, .bouton-vert {
-  display: inline-block;
-  border-radius: 30px;
-  padding: 14px 24px;
-  font-weight: bold;
-  transition: .2s;
-}
-.bouton-or {
-  background: linear-gradient(135deg, #f4d080, #d4a143);
-  color: #163524;
-}
-.bouton-vert {
-  background: var(--vert);
-  color: white;
-  border: 1px solid var(--or);
-}
-.bouton-or:hover, .bouton-vert:hover {
-  transform: translateY(-2px);
-}
-.menu-mobile { display: none; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ACCUEIL */
-.hero {
-  min-height: 620px;
-  padding: 55px 6%;
-  display: grid;
-  grid-template-columns: 1.08fr .92fr;
-  align-items: center;
-  gap: 35px;
-  background:
-    radial-gradient(circle at 80% 30%, #24583c 0, var(--vert-fonce) 58%, #071f17 100%);
-  color: white;
-  overflow: hidden;
-}
-.hero-texte { max-width: 760px; }
-.surtitre {
-  color: var(--or);
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-.hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(38px, 4.5vw, 70px);
-  line-height: 1.08;
-  margin: 18px 0;
-  color: #fff9ed;
-}
-.hero h1 span { color: #e4b75d; }
-.hero p {
-  max-width: 650px;
-  font-size: 18px;
-  color: #f5f0e5;
-}
-.hero-photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-}
-.hero-photo img {
-  width: min(100%, 570px);
-  max-height: 560px;
-  object-fit: contain;
-  filter: drop-shadow(0 18px 28px #0006);
-}
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
-}
-.categories-rapides {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 30px;
-}
-.categorie-rapide {
-  text-align: center;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
-.categorie-rapide img {
-  width: 78px;
-  height: 78px;
-  object-fit: cover;
-  border: 2px solid var(--or);
-  border-radius: 50%;
-  margin: 0 auto 8px;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
 
-/* BANDE DE PROMESSES */
-.avantages {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: #f1e6d2;
-  border-bottom: 1px solid #e2d2b6;
-}
-.avantages div {
-  text-align: center;
-  padding: 18px 12px;
-  border-right: 1px solid #dfd0b6;
-  font-weight: bold;
-  font-size: 14px;
-}
-.avantages span { color: #a46e18; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--creme);
+      color: var(--texte);
+      line-height: 1.65;
+    }
 
-/* SECTIONS */
-.conteneur {
-  max-width: 1400px;
-  padding: 75px 5%;
-  margin: auto;
-}
-.entete-section {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 38px;
-}
-.entete-section .surtitre { font-size: 12px; }
-.entete-section h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--vert);
-  font-size: clamp(30px, 4vw, 47px);
-  line-height: 1.2;
-  margin: 10px 0;
-}
-.entete-section p {
-  color: var(--gris);
-  font-size: 16px;
-}
-.grille {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-.carte {
-  background: white;
-  border: 1px solid #eadfc9;
-  box-shadow: 0 8px 24px #3c32130b;
-  overflow: hidden;
-  transition: transform .25s, box-shadow .25s;
-}
-.carte:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px #3c32131a;
-}
-.carte > img {
-  width: 100%;
-  height: 290px;
-  object-fit: cover;
-  background: #eee4d5;
-}
-.carte-contenu { padding: 22px; }
-.carte h3 {
-  font-family: Georgia, serif;
-  color: var(--vert);
-  font-size: 25px;
-  margin: 0 0 8px;
-}
-.carte p { color: var(--gris); margin: 0 0 15px; }
-.lien-or {
-  color: #966218;
-  font-weight: bold;
-  font-size: 14px;
-}
-.lien-or:hover { text-decoration: underline; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-/* GALERIES PHOTOS */
-.fond-clair { background: #f3eadb; }
-.galerie {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-.photo-produit {
-  background: white;
-  border: 1px solid #e8ddca;
-  overflow: hidden;
-}
-.photo-produit img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  transition: transform .35s;
-}
-.photo-produit:hover img { transform: scale(1.04); }
-.photo-legende {
-  padding: 12px 14px;
-  color: var(--vert);
-  font-weight: bold;
-  font-size: 14px;
-}
-.note-prix {
-  text-align: center;
-  margin-top: 28px;
-  color: var(--vert);
-  font-weight: bold;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* ATTIWOTO SERVICES */
-.service {
-  background: linear-gradient(130deg, #0b2d20, #174d36);
-  color: white;
-  padding: 75px 5%;
-}
-.service-interieur {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 45px;
-}
-.service h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(36px, 4vw, 52px);
-  color: #f1ca78;
-  line-height: 1.15;
-  margin: 12px 0;
-}
-.service p { color: #f4f0e7; font-size: 17px; }
-.service img {
-  width: 100%;
-  max-height: 470px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-.service .surtitre { color: #f1ca78; }
+    .bandeau {
+      padding: 9px 15px;
+      background: #061e16;
+      color: var(--or-clair);
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
 
-/* PRESENTATION DE LA MAISON */
-.maison {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  align-items: center;
-  gap: 40px;
-}
-.maison img {
-  width: 100%;
-  max-height: 360px;
-  object-fit: contain;
-}
-.maison h2 {
-  font-family: Georgia, serif;
-  color: var(--vert);
-  font-size: 36px;
-  line-height: 1.2;
-}
-.maison p { color: var(--gris); font-size: 17px; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--vert);
+      border-bottom: 2px solid var(--or);
+    }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-  background: #efe2cc;
-  padding: 75px 5%;
-}
-.contact h2 {
-  font-family: Georgia, serif;
-  color: var(--vert);
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.2;
-  margin: 12px auto;
-}
-.contact p { color: #59665d; font-size: 17px; }
-.contact .bouton-vert { margin-top: 15px; }
+    .navigation {
+      max-width: 1450px;
+      min-height: 88px;
+      padding: 12px 4%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-footer {
-  background: #08271c;
-  color: white;
-  text-align: center;
-  padding: 32px 15px;
-}
-footer strong {
-  color: #f1ca78;
-  letter-spacing: 2px;
-}
-footer p { margin: 7px 0; font-size: 14px; }
-footer a { color: #f1ca78; }
+    .identite {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 220px;
+    }
 
-.whatsapp-flottant {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 20;
-  background: #168c55;
-  color: white;
-  padding: 13px 19px;
-  border-radius: 40px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px #0003;
-}
+    .identite img {
+      width: 75px;
+      height: 65px;
+      object-fit: contain;
+    }
 
-@media (max-width: 1000px) {
-  .navigation { flex-wrap: wrap; }
-  .nav-liens { gap: 12px; }
-  .nav-liens a { font-size: 12px; }
-  .hero { min-height: auto; padding: 45px 5%; }
-  .grille { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .galerie { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 680px) {
-  .bandeau { font-size: 10px; letter-spacing: 1px; }
-  .navigation { padding: 10px 5%; gap: 10px; }
-  .identite { min-width: 0; gap: 8px; }
-  .identite img { width: 52px; height: 52px; }
-  .nom-marque { font-size: 15px; }
-  .slogan-marque { font-size: 8px; letter-spacing: 1px; }
-  .nav-liens { width: 100%; gap: 9px 16px; }
-  .nav-liens a { font-size: 12px; }
-  .navigation > .bouton-or { padding: 10px 14px; font-size: 12px; }
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 38px 6% 45px;
-    gap: 20px;
-  }
-  .hero-texte { order: 1; }
-  .hero-photo { order: 0; }
-  .hero-photo img { max-height: 350px; width: 100%; }
-  .hero h1 { font-size: clamp(36px, 10vw, 52px); }
-  .hero p { font-size: 16px; }
-  .hero-actions { justify-content: center; }
-  .hero-actions a { padding: 12px 16px; font-size: 13px; }
-  .categories-rapides { gap: 8px; }
-  .categorie-rapide { font-size: 10px; }
-  .categorie-rapide img { width: 60px; height: 60px; }
-  .avantages { grid-template-columns: 1fr; }
-  .avantages div { border-right: 0; border-bottom: 1px solid #dfd0b6; }
-  .conteneur { padding: 50px 5%; }
-  .grille { grid-template-columns: 1fr; gap: 20px; }
-  .galerie { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .photo-produit img { height: 200px; }
-  .photo-legende { padding: 9px; font-size: 12px; }
-  .carte > img { height: 260px; }
-  .service { padding: 50px 6%; }
-  .service-interieur { grid-template-columns: 1fr; gap: 25px; }
-  .service img { max-height: 320px; }
-  .maison { grid-template-columns: 1fr; text-align: center; gap: 15px; }
-  .maison img { max-height: 300px; }
-  .maison h2 { font-size: 30px; }
-  .whatsapp-flottant { right: 12px; bottom: 12px; padding: 11px 15px; font-size: 13px; }
-}
-</style>
+    .identite strong {
+      display: block;
+      color: var(--or-clair);
+      font-family: Georgia, serif;
+      font-size: clamp(15px, 1.7vw, 23px);
+      line-height: 1.25;
+    }
+
+    .identite small {
+      display: block;
+      color: #f6e8c6;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--or-clair);
+    }
+
+    .bouton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 35px;
+      border: 0;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .bouton:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--ombre);
+    }
+
+    .bouton-or {
+      color: var(--vert);
+      background: linear-gradient(135deg, #f5d58d, #dba843);
+    }
+
+    .bouton-vert {
+      color: white;
+      background: var(--vert);
+    }
+
+    .bouton-clair {
+      color: var(--vert);
+      background: white;
+      border: 1px solid #e7d7b8;
+    }
+
+    .menu-mobile {
+      display: none;
+      color: white;
+      border: 1px solid #628071;
+      background: transparent;
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* ACCUEIL */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 40%, rgba(199,149,61,.15), transparent 32%),
+        linear-gradient(115deg, #fffaf0 0%, #f3e8d4 55%, #e6d2a7 100%);
+      border-bottom: 1px solid #d8b46e;
+    }
+
+    .hero-interieur {
+      max-width: 1450px;
+      min-height: 610px;
+      margin: auto;
+      padding: 55px 5%;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .surtitre {
+      color: #a36e1e;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      color: var(--vert);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5.2vw, 75px);
+      line-height: 1.06;
+      margin: 18px 0;
+    }
+
+    .hero h1 span {
+      color: #a87522;
+      display: block;
+    }
+
+    .hero-texte {
+      font-size: 18px;
+      max-width: 610px;
+      margin-bottom: 25px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .promesses {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 27px;
+      color: var(--vert);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .promesses span::before {
+      content: "✦ ";
+      color: #b7832d;
+    }
+
+    .hero-visuel {
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .halo {
+      position: absolute;
+      width: min(95%, 480px);
+      aspect-ratio: 1;
+      border: 2px solid #d7ac58;
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(199,149,61,.12),
+                  0 0 0 34px rgba(199,149,61,.06);
+    }
+
+    .portrait {
+      position: relative;
+      width: min(100%, 520px);
+      max-height: 510px;
+      height: 490px;
+      object-fit: contain;
+      z-index: 1;
+      filter: drop-shadow(0 20px 22px rgba(25, 32, 20, .18));
+    }
+
+    .hero-signature {
+      position: absolute;
+      bottom: 4px;
+      right: 0;
+      z-index: 2;
+      padding: 11px 20px;
+      border-radius: 8px;
+      background: var(--vert);
+      color: var(--or-clair);
+      border: 1px solid var(--or);
+      font-family: Georgia, serif;
+      text-align: center;
+      box-shadow: var(--ombre);
+    }
+
+    .hero-signature strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .hero-signature small {
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* SECTIONS */
+    section.contenu {
+      padding: 75px 5%;
+    }
+
+    .entete-section {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .entete-section h2 {
+      color: var(--vert);
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .entete-section p {
+      color: #59635d;
+    }
+
+    .univers {
+      background: var(--blanc);
+    }
+
+    .grille-univers {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .carte-univers {
+      overflow: hidden;
+      background: white;
+      border: 1px solid #eee2cd;
+      border-radius: 14px;
+      box-shadow: var(--ombre);
+      transition: transform .25s;
+    }
+
+    .carte-univers:hover {
+      transform: translateY(-5px);
+    }
+
+    .carte-univers img {
+      width: 100%;
+      height: 235px;
+      object-fit: cover;
+      background: #eee6d8;
+    }
+
+    .carte-univers h3 {
+      color: var(--vert);
+      font-family: Georgia, serif;
+      font-size: 20px;
+      padding: 16px 16px 4px;
+    }
+
+    .carte-univers p {
+      padding: 0 16px 18px;
+      font-size: 14px;
+      color: #59635d;
+    }
+
+    .carte-univers .lien-carte {
+      display: inline-block;
+      margin: 0 16px 20px;
+      color: #926019;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* GALERIE */
+    .galerie {
+      background: var(--creme);
+    }
+
+    .filtres {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto 30px;
+    }
+
+    .filtre {
+      padding: 10px 17px;
+      border-radius: 25px;
+      border: 1px solid #d8c7a6;
+      color: var(--vert);
+      background: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .filtre.actif,
+    .filtre:hover {
+      color: white;
+      background: var(--vert);
+      border-color: var(--vert);
+    }
+
+    .grille-produits {
+      max-width: 1350px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .produit {
+      overflow: hidden;
+      background: white;
+      border-radius: 13px;
+      border: 1px solid #eadfc9;
+      box-shadow: 0 7px 22px rgba(11,43,32,.07);
+    }
+
+    .produit[hidden] {
+      display: none;
+    }
+
+    .produit img {
+      width: 100%;
+      height: 265px;
+      object-fit: cover;
+      background: #eee7da;
+      transition: transform .3s;
+    }
+
+    .produit:hover img {
+      transform: scale(1.035);
+    }
+
+    .produit-infos {
+      padding: 16px;
+    }
+
+    .produit h3 {
+      color: var(--vert);
+      font-family: Georgia, serif;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .produit p {
+      font-size: 13px;
+      color: #677069;
+      margin-bottom: 13px;
+    }
+
+    .prix-demande {
+      color: #94621a;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .4px;
+      margin-bottom: 13px;
+    }
+
+    .produit .bouton {
+      width: 100%;
+      padding: 11px 12px;
+      font-size: 13px;
+      border-radius: 7px;
+    }
+
+    .note-galerie {
+      text-align: center;
+      margin-top: 28px;
+      color: #58635b;
+      font-size: 14px;
+    }
+
+    /* ATT IWOTO SERVICES */
+    .services {
+      color: white;
+      background: linear-gradient(135deg, #0b2b20, #174633);
+    }
+
+    .services .entete-section h2,
+    .services .entete-section p {
+      color: white;
+    }
+
+    .services .surtitre {
+      color: var(--or-clair);
+    }
+
+    .services-interieur {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .services-photo {
+      width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .services-texte h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      color: var(--or-clair);
+      margin-bottom: 15px;
+    }
+
+    .services-texte p {
+      margin-bottom: 16px;
+      color: #f1f2ed;
+    }
+
+    .services-texte ul {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .services-texte li {
+      margin: 10px 0;
+    }
+
+    .services-texte li::before {
+      content: "✦ ";
+      color: var(--or-clair);
+      margin-right: 6px;
+    }
+
+    /* MAISON */
+    .maison {
+      background: var(--blanc);
+    }
+
+    .maison-interieur {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .maison-interieur img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+    }
+
+    .maison-interieur h2 {
+      font-family: Georgia, serif;
+      font-size: 35px;
+      color: var(--vert);
+      margin: 12px 0;
+    }
+
+    .maison-interieur p {
+      margin: 12px 0;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: #efe3cd;
+    }
+
+    .contact-interieur {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      font-family: Georgia, serif;
+      color: var(--vert);
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 12px 0;
+    }
+
+    .contact p {
+      margin: 12px 0 24px;
+    }
+
+    footer {
+      background: #061e16;
+      color: #f9f0dc;
+      padding: 35px 5% 22px;
+      text-align: center;
+    }
+
+    footer strong {
+      display: block;
+      color: var(--or-clair);
+      font-family: Georgia, serif;
+      font-size: 23px;
+    }
+
+    footer p {
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .whatsapp-flottant {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 900;
+      padding: 14px 19px;
+      background: #168b51;
+      color: white;
+      border-radius: 40px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    }
+
+    @media (max-width: 1050px) {
+      .navigation {
+        gap: 12px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .grille-produits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grille-univers {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .bandeau {
+        font-size: 10px;
+        letter-spacing: .7px;
+      }
+
+      .navigation {
+        min-height: 76px;
+        padding: 8px 4%;
+      }
+
+      .identite {
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .identite img {
+        width: 53px;
+        height: 52px;
+      }
+
+      .identite strong {
+        font-size: 14px;
+      }
+
+      .identite small {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .menu-mobile {
+        display: block;
+      }
+
+      .navigation > .bouton-or {
+        display: none;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding: 20px;
+        background: var(--vert);
+        border-top: 1px solid #526f5c;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav.ouvert {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px 5px;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+        font-size: 15px;
+      }
+
+      .hero-interieur {
+        grid-template-columns: 1fr;
+        padding: 42px 6% 35px;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 10vw, 59px);
+      }
+
+      .hero-texte {
+        font-size: 16px;
+      }
+
+      .hero-visuel {
+        min-height: 340px;
+      }
+
+      .portrait {
+        height: 340px;
+      }
+
+      .hero-signature {
+        right: 2px;
+        bottom: 0;
+      }
+
+      section.contenu {
+        padding: 55px 5%;
+      }
+
+      .grille-univers {
+        gap: 13px;
+      }
+
+      .carte-univers img {
+        height: 180px;
+      }
+
+      .carte-univers h3 {
+        font-size: 17px;
+        padding: 12px 12px 3px;
+      }
+
+      .carte-univers p {
+        padding: 0 12px 14px;
+        font-size: 12px;
+      }
+
+      .carte-univers .lien-carte {
+        margin: 0 12px 15px;
+      }
+
+      .grille-produits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .produit img {
+        height: 190px;
+      }
+
+      .produit-infos {
+        padding: 11px;
+      }
+
+      .produit h3 {
+        font-size: 16px;
+      }
+
+      .services-interieur,
+      .maison-interieur {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .services-photo {
+        max-height: 320px;
+      }
+
+      .maison-interieur img {
+        max-height: 290px;
+      }
+
+      .whatsapp-flottant {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .identite strong {
+        font-size: 12px;
+      }
+
+      .grille-univers {
+        grid-template-columns: 1fr;
+      }
+
+      .carte-univers img {
+        height: 230px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="bandeau">
-  CRÉATIONS AFRICAINES · VENTE AU DÉTAIL ET EN GROS · PRIX SUR DEMANDE
-</div>
-
-<header>
-  <div class="navigation">
-    <a class="identite" href="#accueil" aria-label="Accueil La Maison du Design">
-      <img src="images/logo-maison-du-design.jpeg" alt="Logo La Maison du Design">
-      <span>
-        <span class="nom-marque">LA MAISON DU DESIGN</span><br>
-        <span class="slogan-marque">L'ÉLÉGANCE À VOTRE IMAGE</span>
-      </span>
-    </a>
-
-    <nav class="nav-liens" aria-label="Navigation principale">
-      <a href="#accueil">Accueil</a>
-      <a href="#univers">Nos univers</a>
-      <a href="#maison">Notre maison</a>
-      <a href="#collections">Collections</a>
-      <a href="#attiwoto-services">ATTIWOTO SERVICES</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="bouton-or" href="https://wa.me/2250759579755?text=Bonjour%20LA%20MAISON%20DU%20DESIGN%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">
-      WhatsApp ›
-    </a>
+  <div class="bandeau">
+    CRÉATIONS AFRICAINES · VENTE AU DÉTAIL ET EN GROS · PRIX SUR DEMANDE
   </div>
-</header>
 
-<main>
+  <header>
+    <div class="navigation">
+      <a class="identite" href="#accueil" aria-label="Accueil La Maison du Design">
+        <img src="images/logo-maison-du-design.jpeg"
+             alt="Logo La Maison du Design">
+        <span>
+          <strong>LA MAISON DU DESIGN</strong>
+          <small>L'ÉLÉGANCE À VOTRE IMAGE</small>
+        </span>
+      </a>
 
-<!-- ACCUEIL : LA PRÉSENTATION APPARAÎT EN PREMIER -->
-<section class="hero" id="accueil">
-  <div class="hero-texte">
-    <div class="surtitre">Une maison, une vision</div>
-    <h1>Bienvenue dans l’univers <span>LA MAISON DU DESIGN</span></h1>
-    <p>
-      Nous vous proposons un univers où le style, la beauté et les inspirations
-      africaines se rencontrent. Des créations qui vous ressemblent,
-      des détails qui font la différence.
-    </p>
+      <button class="menu-mobile" id="menuBouton"
+              aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
-    <div class="categories-rapides">
-      <a class="categorie-rapide" href="#tenues">
-        <img src="images/collection-famille-originale.jpeg" alt="Tenues coordonnées pour la famille">
-        TENUES AFRICAINES
-      </a>
-      <a class="categorie-rapide" href="#sandales">
-        <img src="images/sandales-01.jpeg" alt="Modèle de sandales">
-        SANDales UNIQUES
-      </a>
-      <a class="categorie-rapide" href="#onglerie">
-        <img src="images/Manucure%20fran%C3%A7aise%20dor%C3%A9e%20et%20scintillante.png" alt="Manucure élégante">
-        ONGLERIE
-      </a>
-      <a class="categorie-rapide" href="#perruques">
-        <img src="images/PERRUQUE%201.png" alt="Modèle de perruque">
-        PERRUQUES
+      <nav id="menuPrincipal">
+        <a href="#accueil">Accueil</a>
+        <a href="#univers">Nos univers</a>
+        <a href="#collections">Collections</a>
+        <a href="#maison">Notre maison</a>
+        <a href="#attiwoto-services">ATTIWOTO SERVICES</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="bouton bouton-or" href="https://wa.me/2250759579755">
+        WhatsApp&nbsp; ›
       </a>
     </div>
+  </header>
 
-    <div class="hero-actions">
-      <a class="bouton-or" href="#collections">DÉCOUVRIR NOS COLLECTIONS ›</a>
-      <a class="bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20vos%20collections." target="_blank" rel="noopener">
-        PARLONS DE VOTRE ENVIE ›
-      </a>
-    </div>
-  </div>
+  <main>
+    <!-- ACCUEIL : PREMIÈRE SECTION VISIBLE -->
+    <section class="hero" id="accueil">
+      <div class="hero-interieur">
+        <div>
+          <div class="surtitre">Une maison, une vision</div>
 
-  <div class="hero-photo">
-    <img src="images/gerante-maison-du-design.png" alt="Portrait de la gérante de La Maison du Design">
-  </div>
-</section>
+          <h1>
+            Bienvenue dans l’univers
+            <span>LA MAISON DU DESIGN</span>
+          </h1>
 
-<div class="avantages">
-  <div><span>✦</span> Des créations sélectionnées avec soin</div>
-  <div><span>✦</span> Vente au détail et en gros</div>
-  <div><span>✦</span> Commandes simples sur WhatsApp</div>
-</div>
+          <p class="hero-texte">
+            Nous vous proposons un univers où le style, la beauté et les
+            inspirations africaines se rencontrent. Des créations qui vous
+            ressemblent, des détails qui font la différence.
+          </p>
 
-<!-- LES UNIVERS -->
-<section class="conteneur" id="univers">
-  <div class="entete-section">
-    <div class="surtitre">Découvrez notre sélection</div>
-    <h2>Un univers, mille inspirations</h2>
-    <p>Explorez nos univers et contactez-nous pour les prix, les tailles et les disponibilités.</p>
-  </div>
+          <div class="hero-actions">
+            <a class="bouton bouton-or" href="#collections">
+              ✦ Découvrir nos collections
+            </a>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20articles%20et%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations%2C%20s%E2%80%99il%20vous%20pla%C3%AEt.%20Merci%20%21">
+              ☎ Parlons de votre envie
+            </a>
+          </div>
 
-  <div class="grille">
-    <article class="carte" id="tenues">
-      <img src="images/collection-famille-originale.jpeg" alt="Collection de tenues africaines coordonnées pour la famille" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Tenues africaines</h3>
-        <p>Des tenues coordonnées et des inspirations pour toute la famille.</p>
-        <a class="lien-or" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20voir%20vos%20tenues%20africaines." target="_blank" rel="noopener">DÉCOUVRIR SUR WHATSAPP →</a>
+          <div class="promesses">
+            <span>Style et élégance</span>
+            <span>Vente au détail et en gros</span>
+            <span>Conseils sur demande</span>
+          </div>
+        </div>
+
+        <div class="hero-visuel">
+          <div class="halo"></div>
+          <img class="portrait"
+               src="images/gerante-maison-du-design.png"
+               alt="Portrait de la gérante de La Maison du Design">
+          <div class="hero-signature">
+            <strong>LA MAISON DU DESIGN</strong>
+            <small>L'ÉLÉGANCE À VOTRE IMAGE</small>
+          </div>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <article class="carte">
-      <img src="images/sandales-01.jpeg" alt="Sandales originales à imprimé coloré" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Sandales uniques</h3>
-        <p>Des modèles originaux pour affirmer votre style au quotidien.</p>
-        <a class="lien-or" href="#sandales">VOIR LES MODÈLES →</a>
+    <!-- NOS UNIVERS -->
+    <section class="contenu univers" id="univers">
+      <div class="entete-section">
+        <div class="surtitre">Nos univers</div>
+        <h2>Un style, mille inspirations</h2>
+        <p>
+          Explorez nos différents univers et contactez-nous pour connaître
+          les modèles, les tailles et les disponibilités.
+        </p>
       </div>
-    </article>
 
-    <article class="carte" id="onglerie">
-      <img src="images/ONGLERIE.png" alt="Modèles d'onglerie" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Onglerie</h3>
-        <p>Des styles variés pour mettre vos mains en valeur.</p>
-        <a class="lien-or" href="#galerie-onglerie">DÉCOUVRIR LES MODÈLES →</a>
+      <div class="grille-univers">
+        <article class="carte-univers">
+          <img src="images/collection-famille-originale.jpeg"
+               alt="Collection de tenues et inspirations africaines"
+               loading="lazy">
+          <h3>Tenues africaines</h3>
+          <p>Des styles qui célèbrent l'élégance et l'identité.</p>
+          <a class="lien-carte" href="#collections">Voir les collections →</a>
+        </article>
+
+        <article class="carte-univers">
+          <img src="images/sandales-01.jpeg"
+               alt="Sandales de la collection"
+               loading="lazy">
+          <h3>Sandales</h3>
+          <p>Des modèles pour affirmer votre style au quotidien.</p>
+          <a class="lien-carte" href="#collections">Découvrir les modèles →</a>
+        </article>
+
+        <article class="carte-univers">
+          <img src="images/Manucure%20fran%C3%A7aise%20dor%C3%A9e%20et%20scintillante.png"
+               alt="Manucure française dorée et scintillante"
+               loading="lazy">
+          <h3>Onglerie</h3>
+          <p>Une touche de beauté et de raffinement jusqu'au bout des doigts.</p>
+          <a class="lien-carte" href="#attiwoto-services">En savoir plus →</a>
+        </article>
+
+        <article class="carte-univers">
+          <img src="images/PERRUQUE%20ENTRETEN.png"
+               alt="Perruque et entretien"
+               loading="lazy">
+          <h3>Perruques et entretien</h3>
+          <p>Des soins et de l'attention pour préserver la beauté de vos perruques.</p>
+          <a class="lien-carte" href="#attiwoto-services">En savoir plus →</a>
+        </article>
       </div>
-    </article>
+    </section>
 
-    <article class="carte" id="perruques">
-      <img src="images/PERRUQUE%201.png" alt="Modèle de perruque" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Perruques</h3>
-        <p>Découvrez nos modèles et demandez conseil pour votre choix.</p>
-        <a class="lien-or" href="#galerie-perruques">VOIR LES MODÈLES →</a>
+    <!-- COLLECTIONS : LES PHOTOS DE SANDALLES -->
+    <section class="contenu galerie" id="collections">
+      <div class="entete-section">
+        <div class="surtitre">Nos sélections</div>
+        <h2>Découvrez nos collections</h2>
+        <p>
+          Une sélection de modèles à découvrir. Les prix, tailles et
+          disponibilités sont communiqués sur demande.
+        </p>
       </div>
-    </article>
 
-    <article class="carte">
-      <img src="images/PERRUQUE%20ENTRETEN.png" alt="Entretien et soin de perruque" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Entretien des perruques</h3>
-        <p>Découvrez nos conseils et prestations pour prendre soin de vos perruques.</p>
-        <a class="lien-or" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27entretien%20des%20perruques." target="_blank" rel="noopener">EN SAVOIR PLUS →</a>
+      <div class="filtres" aria-label="Filtrer les collections">
+        <button class="filtre actif" data-filtre="tous">Tout voir</button>
+        <button class="filtre" data-filtre="sandales">Sandales</button>
+        <button class="filtre" data-filtre="tenues">Tenues</button>
+        <button class="filtre" data-filtre="onglerie">Onglerie</button>
+        <button class="filtre" data-filtre="perruques">Perruques</button>
       </div>
-    </article>
 
-    <article class="carte">
-      <img src="images/Manucure%20fran%C3%A7aise%20dor%C3%A9e%20et%20scintillante.png" alt="Manucure française dorée et scintillante" loading="lazy">
-      <div class="carte-contenu">
-        <h3>Beauté et élégance</h3>
-        <p>Des inspirations beauté pour compléter votre style.</p>
-        <a class="lien-or" href="#contact">NOUS CONTACTER →</a>
+      <div class="grille-produits">
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-01.jpeg" alt="Sandales modèle 01" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 01</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2001.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-02.jpeg" alt="Sandales modèle 02" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 02</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2002.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-03.jpeg" alt="Sandales modèle 03" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 03</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2003.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-04.jpeg" alt="Sandales modèle 04" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 04</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2004.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-05.jpeg" alt="Sandales modèle 05" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 05</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2005.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-06.jpeg" alt="Sandales modèle 06" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 06</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2006.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-07.jpeg" alt="Sandales modèle 07" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 07</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2007.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-08.jpeg" alt="Sandales modèle 08" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 08</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2008.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-09.jpeg" alt="Sandales modèle 09" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 09</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2009.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-10.jpeg" alt="Sandales modèle 10" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 10</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2010.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-11.jpeg" alt="Sandales modèle 11" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 11</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2011.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-12.jpeg" alt="Sandales modèle 12" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 12</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2012.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-13.jpeg" alt="Sandales modèle 13" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 13</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2013.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-14.jpeg" alt="Sandales modèle 14" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 14</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2014.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="sandales">
+          <img src="images/sandales-15.jpeg" alt="Sandales modèle 15" loading="lazy">
+          <div class="produit-infos">
+            <h3>Sandales 15</h3>
+            <p>Collection sandales</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20les%20sandales%20mod%C3%A8le%2015.%20J%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="tenues">
+          <img src="images/collection-famille-originale.jpeg"
+               alt="Collection de tenues africaines" loading="lazy">
+          <div class="produit-infos">
+            <h3>Collection tenues</h3>
+            <p>Tenues et inspirations africaines</p>
+            <div class="prix-demande">Prix et tailles sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20tenues%20et%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="onglerie">
+          <img src="images/Manucure%20fran%C3%A7aise%20dor%C3%A9e%20et%20scintillante.png"
+               alt="Manucure française dorée et scintillante" loading="lazy">
+          <div class="produit-infos">
+            <h3>Onglerie</h3>
+            <p>Beauté et élégance</p>
+            <div class="prix-demande">Informations sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20vos%20services%20d%E2%80%99onglerie.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="onglerie">
+          <img src="images/ONGLERIE.png" alt="Modèle d'onglerie" loading="lazy">
+          <div class="produit-infos">
+            <h3>Modèles d'onglerie</h3>
+            <p>Découvrez nos inspirations</p>
+            <div class="prix-demande">Informations sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20vos%20services%20d%E2%80%99onglerie.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="perruques">
+          <img src="images/PERRUQUE%201.png" alt="Perruque modèle 1" loading="lazy">
+          <div class="produit-infos">
+            <h3>Perruques</h3>
+            <p>Découvrez nos modèles</p>
+            <div class="prix-demande">Informations sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20vos%20perruques.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="perruques">
+          <img src="images/PERRUQUE%202.png" alt="Perruque modèle 2" loading="lazy">
+          <div class="produit-infos">
+            <h3>Perruques et beauté</h3>
+            <p>Un style adapté à vos envies</p>
+            <div class="prix-demande">Informations sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20vos%20perruques.">Demander des informations</a>
+          </div>
+        </article>
+
+        <article class="produit" data-categorie="perruques">
+          <img src="images/PERRUQUE%20ENTRETEN.png"
+               alt="Entretien de perruque" loading="lazy">
+          <div class="produit-infos">
+            <h3>Entretien de perruques</h3>
+            <p>Des conseils pour prendre soin de vos perruques</p>
+            <div class="prix-demande">Informations sur demande</div>
+            <a class="bouton bouton-vert"
+               href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d%E2%80%99informations%20sur%20l%E2%80%99entretien%20des%20perruques.">Demander des informations</a>
+          </div>
+        </article>
       </div>
-    </article>
-  </div>
-</section>
 
-<!-- GALERIE SANDALeS -->
-<section class="fond-clair" id="collections">
-  <div class="conteneur" id="sandales">
-    <div class="entete-section">
-      <div class="surtitre">Nos modèles</div>
-      <h2>Les sandales à découvrir</h2>
-      <p>Une sélection de modèles en images. Contactez-nous pour connaître les tailles disponibles, le prix et les modalités de commande.</p>
-    </div>
-
-    <div class="galerie">
-      <article class="photo-produit"><img src="images/sandales-01.jpeg" alt="Sandales modèle 01" loading="lazy"><div class="photo-legende">Sandales · Modèle 01</div></article>
-      <article class="photo-produit"><img src="images/sandales-02.jpeg" alt="Sandales modèle 02" loading="lazy"><div class="photo-legende">Sandales · Modèle 02</div></article>
-      <article class="photo-produit"><img src="images/sandales-03.jpeg" alt="Sandales modèle 03" loading="lazy"><div class="photo-legende">Sandales · Modèle 03</div></article>
-      <article class="photo-produit"><img src="images/sandales-04.jpeg" alt="Sandales modèle 04" loading="lazy"><div class="photo-legende">Sandales · Modèle 04</div></article>
-      <article class="photo-produit"><img src="images/sandales-05.jpeg" alt="Sandales modèle 05" loading="lazy"><div class="photo-legende">Sandales · Modèle 05</div></article>
-      <article class="photo-produit"><img src="images/sandales-06.jpeg" alt="Sandales modèle 06" loading="lazy"><div class="photo-legende">Sandales · Modèle 06</div></article>
-      <article class="photo-produit"><img src="images/sandales-07.jpeg" alt="Sandales modèle 07" loading="lazy"><div class="photo-legende">Sandales · Modèle 07</div></article>
-      <article class="photo-produit"><img src="images/sandales-08.jpeg" alt="Sandales modèle 08" loading="lazy"><div class="photo-legende">Sandales · Modèle 08</div></article>
-      <article class="photo-produit"><img src="images/sandales-09.jpeg" alt="Sandales modèle 09" loading="lazy"><div class="photo-legende">Sandales · Modèle 09</div></article>
-      <article class="photo-produit"><img src="images/sandales-10.jpeg" alt="Sandales modèle 10" loading="lazy"><div class="photo-legende">Sandales · Modèle 10</div></article>
-      <article class="photo-produit"><img src="images/sandales-11.jpeg" alt="Sandales modèle 11" loading="lazy"><div class="photo-legende">Sandales · Modèle 11</div></article>
-      <article class="photo-produit"><img src="images/sandales-12.jpeg" alt="Sandales modèle 12" loading="lazy"><div class="photo-legende">Sandales · Modèle 12</div></article>
-      <article class="photo-produit"><img src="images/sandales-13.jpeg" alt="Sandales modèle 13" loading="lazy"><div class="photo-legende">Sandales · Modèle 13</div></article>
-      <article class="photo-produit"><img src="images/sandales-14.jpeg" alt="Sandales modèle 14" loading="lazy"><div class="photo-legende">Sandales · Modèle 14</div></article>
-      <article class="photo-produit"><img src="images/sandales-15.jpeg" alt="Sandales modèle 15" loading="lazy"><div class="photo-legende">Sandales · Modèle 15</div></article>
-    </div>
-    <p class="note-prix">Prix, tailles et disponibilités communiqués sur demande.</p>
-    <div style="text-align:center;margin-top:22px">
-      <a class="bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20conna%C3%AEtre%20les%20prix%20et%20les%20tailles%20des%20sandales." target="_blank" rel="noopener">DEMANDER LES PRIX SUR WHATSAPP</a>
-    </div>
-  </div>
-</section>
-
-<!-- GALERIE ONGLERIE -->
-<section class="conteneur" id="galerie-onglerie">
-  <div class="entete-section">
-    <div class="surtitre">Beauté des mains</div>
-    <h2>Nos inspirations onglerie</h2>
-    <p>Découvrez nos modèles et contactez-nous pour obtenir des informations sur les prestations.</p>
-  </div>
-  <div class="grille">
-    <article class="carte">
-      <img src="images/ONGLERIE.png" alt="Créations onglerie" loading="lazy">
-      <div class="carte-contenu"><h3>Styles variés</h3><p>Des inspirations pour toutes vos envies.</p></div>
-    </article>
-    <article class="carte">
-      <img src="images/Manucure%20fran%C3%A7aise%20dor%C3%A9e%20et%20scintillante.png" alt="Manucure française dorée et scintillante" loading="lazy">
-      <div class="carte-contenu"><h3>Élégance dorée</h3><p>Une finition délicate et lumineuse.</p></div>
-    </article>
-  </div>
-</section>
-
-<!-- GALERIE PERRUQUES -->
-<section class="fond-clair" id="galerie-perruques">
-  <div class="conteneur">
-    <div class="entete-section">
-      <div class="surtitre">Votre beauté, votre style</div>
-      <h2>Perruques et entretien</h2>
-      <p>Découvrez nos visuels et contactez-nous pour choisir le modèle ou le soin adapté à votre besoin.</p>
-    </div>
-    <div class="grille">
-      <article class="carte">
-        <img src="images/PERRUQUE%201.png" alt="Perruque modèle 1" loading="lazy">
-        <div class="carte-contenu"><h3>Modèle de perruque</h3><p>Demandez des informations sur les modèles disponibles.</p></div>
-      </article>
-      <article class="carte">
-        <img src="images/PERRUQUE%202.png" alt="Perruque modèle 2" loading="lazy">
-        <div class="carte-contenu"><h3>Autres inspirations</h3><p>Échangeons sur le style que vous recherchez.</p></div>
-      </article>
-      <article class="carte">
-        <img src="images/PERRUQUE%20ENTRETEN.png" alt="Entretien de perruque" loading="lazy">
-        <div class="carte-contenu"><h3>Entretien des perruques</h3><p>Renseignez-vous sur les soins et conseils d'entretien.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ATTIWOTO SERVICES -->
-<section class="service" id="attiwoto-services">
-  <div class="service-interieur">
-    <div>
-      <div class="surtitre">Notre autre univers</div>
-      <h2>ATTIWOTO SERVICES</h2>
-      <p>
-        Découvrez également ATTIWOTO SERVICES, un espace dédié à nos prestations
-        et à notre savoir-faire. Contactez-nous pour découvrir nos services
-        et obtenir des informations adaptées à vos besoins.
+      <p class="note-galerie">
+        Vous avez repéré un modèle ? Écrivez-nous sur WhatsApp pour connaître
+        son prix, les tailles disponibles et les modalités de commande.
       </p>
-      <a class="bouton-or" href="https://wa.me/2250759579755?text=Bonjour%20ATTIWOTO%20SERVICES%2C%20je%20souhaite%20des%20informations%20sur%20vos%20prestations." target="_blank" rel="noopener">DÉCOUVRIR NOS SERVICES ›</a>
-    </div>
-    <div>
-      <img src="images/ATTIWOTO%20SERVICES.jpg" alt="Présentation de ATTIWOTO SERVICES" loading="lazy">
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- NOTRE MAISON -->
-<section class="conteneur" id="maison">
-  <div class="entete-section">
-    <div class="surtitre">Une maison, une vision</div>
-    <h2>Bienvenue chez nous</h2>
-  </div>
-  <div class="maison">
-    <img src="images/gerante-maison-du-design.png" alt="Gérante de La Maison du Design" loading="lazy">
-    <div>
-      <h2>LA MAISON DU DESIGN</h2>
-      <p>
-        Notre ambition : vous proposer un univers où le style, la beauté et les
-        inspirations africaines se rencontrent. Nous sommes à votre écoute pour
-        vous orienter vers les modèles qui vous correspondent.
-      </p>
-      <a class="bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%20LA%20MAISON%20DU%20DESIGN%2C%20j%27aimerais%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">PARLONS DE VOTRE ENVIE</a>
-    </div>
-  </div>
-</section>
+    <!-- ATTIWOTO SERVICES -->
+    <section class="contenu services" id="attiwoto-services">
+      <div class="entete-section">
+        <div class="surtitre">Notre autre univers</div>
+        <h2>ATTIWOTO SERVICES</h2>
+        <p>Un espace dédié à nos prestations et à notre savoir-faire.</p>
+      </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="surtitre">Un renseignement ?</div>
-  <h2>Votre prochain coup de cœur commence ici.</h2>
-  <p>
-    Écrivez-nous pour connaître les prix, les tailles, les disponibilités
-    et les modalités de commande.
-  </p>
-  <a class="bouton-vert" href="https://wa.me/2250759579755?text=Bonjour%20LA%20MAISON%20DU%20DESIGN%2C%20je%20souhaite%20des%20renseignements." target="_blank" rel="noopener">
-    CONTACTER LA MAISON SUR WHATSAPP
+      <div class="services-interieur">
+        <img class="services-photo"
+             src="images/ATTIWOTO%20SERVICES.jpg"
+             alt="Présentation de ATTIWOTO SERVICES"
+             loading="lazy">
+
+        <div class="services-texte">
+          <h3>Découvrons vos besoins ensemble</h3>
+          <p>
+            ATTIWOTO SERVICES complète notre univers avec un espace dédié
+            à nos prestations. Contactez-nous pour présenter votre besoin
+            et recevoir les informations adaptées.
+          </p>
+          <ul>
+            <li>Renseignements sur nos prestations</li>
+            <li>Échanges et demandes personnalisées</li>
+            <li>Contact direct avec notre équipe</li>
+          </ul>
+          <a class="bouton bouton-or"
+             href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20ATTIWOTO%20SERVICES%20et%20avoir%20plus%20d%E2%80%99informations.">
+            Découvrir nos services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTRE MAISON : UNE SEULE PRÉSENTATION -->
+    <section class="contenu maison" id="maison">
+      <div class="maison-interieur">
+        <img src="images/gerante-maison-du-design.png"
+             alt="La gérante de La Maison du Design"
+             loading="lazy">
+
+        <div>
+          <div class="surtitre">Une maison, une vision</div>
+          <h2>La Maison du Design</h2>
+          <p>
+            Notre ambition est de vous proposer un univers où le style,
+            la beauté et les inspirations africaines se rencontrent.
+          </p>
+          <p>
+            Nous sommes à votre écoute pour vous orienter vers les modèles
+            qui vous correspondent. Les prix, tailles et disponibilités
+            sont communiqués sur demande.
+          </p>
+          <a class="bouton bouton-vert"
+             href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20articles%20et%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations%2C%20s%E2%80%99il%20vous%20pla%C3%AEt.%20Merci%20%21">
+            Parlons de votre envie
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contenu contact" id="contact">
+      <div class="contact-interieur">
+        <div class="surtitre">Restons en contact</div>
+        <h2>Une question ? Parlons-en.</h2>
+        <p>
+          Vous souhaitez connaître le prix d'un modèle, vérifier une taille
+          ou découvrir nos services ? Écrivez-nous directement sur WhatsApp.
+        </p>
+        <a class="bouton bouton-vert"
+           href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20articles%20et%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations%2C%20s%E2%80%99il%20vous%20pla%C3%AEt.%20Merci%20%21">
+          Contacter la gérante sur WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>LA MAISON DU DESIGN</strong>
+    <p>L'élégance à votre image.</p>
+    <p>Tenues africaines · Sandales · Onglerie · Perruques</p>
+    <p>ATTIWOTO SERVICES</p>
+    <p>© <span id="annee"></span> LA MAISON DU DESIGN — Tous droits réservés.</p>
+  </footer>
+
+  <a class="whatsapp-flottant"
+     href="https://wa.me/2250759579755?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20articles%20et%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations%2C%20s%E2%80%99il%20vous%20pla%C3%AEt.%20Merci%20%21"
+     aria-label="Écrire à La Maison du Design sur WhatsApp">
+    WhatsApp ↗
   </a>
-</section>
 
-</main>
+  <script>
+    const menuBouton = document.getElementById("menuBouton");
+    const menuPrincipal = document.getElementById("menuPrincipal");
 
-<footer>
-  <strong>LA MAISON DU DESIGN</strong>
-  <p>Mode africaine · Chaussures · Beauté · Perruques</p>
-  <p>Vente au détail et en gros · Prix communiqués sur demande</p>
-  <p><a href="#attiwoto-services">ATTIWOTO SERVICES</a></p>
-  <p>© 2026 LA MAISON DU DESIGN — Tous droits réservés</p>
-</footer>
+    menuBouton.addEventListener("click", function () {
+      const ouvert = menuPrincipal.classList.toggle("ouvert");
+      menuBouton.setAttribute("aria-expanded", ouvert ? "true" : "false");
+      menuBouton.textContent = ouvert ? "✕" : "☰";
+    });
 
-<a class="whatsapp-flottant" href="https://wa.me/2250759579755?text=Bonjour%20LA%20MAISON%20DU%20DESIGN" target="_blank" rel="noopener" aria-label="Contacter La Maison du Design sur WhatsApp">
-  WhatsApp
-</a>
+    menuPrincipal.querySelectorAll("a").forEach(function (lien) {
+      lien.addEventListener("click", function () {
+        menuPrincipal.classList.remove("ouvert");
+        menuBouton.setAttribute("aria-expanded", "false");
+        menuBouton.textContent = "☰";
+      });
+    });
 
+    const boutonsFiltres = document.querySelectorAll(".filtre");
+    const produits = document.querySelectorAll(".produit");
+
+    boutonsFiltres.forEach(function (bouton) {
+      bouton.addEventListener("click", function () {
+        const categorie = bouton.dataset.filtre;
+
+        boutonsFiltres.forEach(function (b) {
+          b.classList.remove("actif");
+        });
+        bouton.classList.add("actif");
+
+        produits.forEach(function (produit) {
+          produit.hidden =
+            categorie !== "tous" &&
+            produit.dataset.categorie !== categorie;
+        });
+      });
+    });
+
+    document.getElementById("annee").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
+```
