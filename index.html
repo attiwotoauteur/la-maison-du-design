@@ -57,11 +57,15 @@ header {
   gap: 10px;
   color: #f5dfaa;
   font: bold 18px Georgia, serif;
+  min-width: 0;
 }
-.brand-mark {
-  border: 1px solid var(--or);
+.brand-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
   border-radius: 50%;
-  padding: 12px;
+  border: 1px solid var(--or);
+  flex-shrink: 0;
 }
 .brand small {
   display: block;
@@ -202,10 +206,12 @@ section { padding: 65px 0; }
 .services .section-head p { color: #e1e8e3; }
 .services-photo {
   width: 100%;
-  height: 390px;
-  object-fit: cover;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
   border: 2px solid var(--or);
   border-radius: 16px;
+  background: white;
 }
 .service-list { display: grid; gap: 14px; }
 .service-card {
@@ -264,13 +270,14 @@ footer strong { color: #f5dfaa; font: bold 19px Georgia, serif; }
   .portrait { max-width: 370px; }
 }
 @media(max-width: 540px) {
-  .brand { font-size: 14px; }
+  .brand { font-size: 13px; }
+  .brand-logo { width: 48px; height: 48px; }
+  .brand small { font-size: 8px; letter-spacing: .5px; }
   .grid { grid-template-columns: 1fr; }
   .card img { height: 300px; }
   section { padding: 48px 0; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; }
-  .services-photo { height: 280px; }
 }
 </style>
 </head>
@@ -281,7 +288,7 @@ footer strong { color: #f5dfaa; font: bold 19px Georgia, serif; }
 <header>
   <div class="container nav">
     <a class="brand" href="#accueil">
-      <span class="brand-mark">MD</span>
+      <img class="brand-logo" src="images/logo-maison-du-design.jpeg" alt="Logo LA MAISON DU DESIGN">
       <span>LA MAISON DU DESIGN
         <small>L’ÉLÉGANCE À VOTRE IMAGE</small>
       </span>
@@ -330,32 +337,56 @@ footer strong { color: #f5dfaa; font: bold 19px Georgia, serif; }
     <div class="grid">
       <article class="card">
         <img src="images/Ensemble tropical bleu et jaune.png" alt="Vêtements" loading="lazy">
-        <div class="card-body"><h3>Vêtements</h3><p>Des tenues modernes et pleines de caractère.</p><a class="btn btn-outline" href="#collections">Découvrir</a></div>
+        <div class="card-body">
+          <h3>Vêtements</h3>
+          <p>Des tenues modernes et pleines de caractère.</p>
+          <a class="btn btn-outline" href="#collections">Découvrir</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Sandales africaines artisanales élégantes.png" alt="Sandales africaines" loading="lazy">
-        <div class="card-body"><h3>Sandales</h3><p>Des modèles originaux pour compléter votre style.</p><a class="btn btn-outline" href="#sandales">Voir les sandales</a></div>
+        <div class="card-body">
+          <h3>Sandales</h3>
+          <p>Des modèles originaux pour compléter votre style.</p>
+          <a class="btn btn-outline" href="#sandales">Voir les sandales</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/PERRUQUE 1.png" alt="Perruques" loading="lazy">
-        <div class="card-body"><h3>Perruques</h3><p>Des modèles pour sublimer votre beauté.</p><a class="btn btn-outline" href="#perruques">Découvrir</a></div>
+        <div class="card-body">
+          <h3>Perruques</h3>
+          <p>Des modèles pour sublimer votre beauté.</p>
+          <a class="btn btn-outline" href="#perruques">Découvrir</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/ONGLERIE.png" alt="Onglerie" loading="lazy">
-        <div class="card-body"><h3>Onglerie</h3><p>Des inspirations raffinées jusque dans les détails.</p><a class="btn btn-outline" href="#onglerie">Découvrir</a></div>
+        <div class="card-body">
+          <h3>Onglerie</h3>
+          <p>Des inspirations raffinées jusque dans les détails.</p>
+          <a class="btn btn-outline" href="#onglerie">Découvrir</a>
+        </div>
       </article>
 
       <article class="card">
-        <img src="images/PERRUQUE ENTRETIEN.png" alt="Entretien de perruques" loading="lazy">
-        <div class="card-body"><h3>Entretien de perruques</h3><p>Besoin de conseils pour prendre soin de votre perruque ?</p><a class="btn btn-outline whatsapp-link" data-message="Bonjour, je souhaite des renseignements sur l’entretien des perruques." href="#">Nous contacter</a></div>
+        <img src="images/PERRUQUE-ENTRETIEN.png" alt="Entretien de perruques" loading="lazy">
+        <div class="card-body">
+          <h3>Entretien de perruques</h3>
+          <p>Votre perruque mérite un soin adapté.</p>
+          <a class="btn btn-outline whatsapp-link" data-message="Bonjour, je souhaite des renseignements sur l’entretien des perruques." href="#">Nous contacter</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Deux garçons en tenue assortie chic.png" alt="Tenues assorties" loading="lazy">
-        <div class="card-body"><h3>Tenues assorties</h3><p>Des ensembles coordonnés pour petits et grands.</p><a class="btn btn-outline" href="#collections">Découvrir</a></div>
+        <div class="card-body">
+          <h3>Tenues assorties</h3>
+          <p>Des ensembles coordonnés pour petits et grands.</p>
+          <a class="btn btn-outline" href="#collections">Découvrir</a>
+        </div>
       </article>
     </div>
   </div>
@@ -372,47 +403,92 @@ footer strong { color: #f5dfaa; font: bold 19px Georgia, serif; }
     <div class="grid">
       <article class="card">
         <img src="images/Ensemble enfant assorti aux motifs abstraits.png" alt="Ensemble enfant" loading="lazy">
-        <div class="card-body"><h3>Ensembles enfants</h3><p>Des couleurs pleines de personnalité.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix et les tailles disponibles des ensembles enfants." href="#">Demander le prix</a></div>
+        <div class="card-body">
+          <h3>Ensembles enfants</h3>
+          <p>Des couleurs pleines de personnalité.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix et les tailles disponibles des ensembles enfants." href="#">Demander le prix</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Ensemble estival bleu et motifs orange.png" alt="Ensemble estival" loading="lazy">
-        <div class="card-body"><h3>Ensembles estivaux</h3><p>Des couleurs lumineuses pour votre style.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix de cet ensemble estival." href="#">Ce modèle m’intéresse</a></div>
+        <div class="card-body">
+          <h3>Ensembles estivaux</h3>
+          <p>Des couleurs lumineuses pour votre style.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix de cet ensemble estival." href="#">Ce modèle m’intéresse</a>
+        </div>
       </article>
 
       <article class="card" id="sandales">
         <img src="images/Sandales africaines artisanales élégantes.png" alt="Sandales africaines artisanales" loading="lazy">
-        <div class="card-body"><h3>Sandales africaines</h3><p>Un style élégant pour compléter vos tenues.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix et les pointures disponibles pour les sandales africaines." href="#">Demander le prix</a></div>
+        <div class="card-body">
+          <h3>Sandales africaines</h3>
+          <p>Un style élégant pour compléter vos tenues.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix et les pointures disponibles pour les sandales africaines." href="#">Demander le prix</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Sandales colorées, style tropical élégant.png" alt="Sandales colorées" loading="lazy">
-        <div class="card-body"><h3>Sandales colorées</h3><p>Une touche de couleur pour vos sorties.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des informations sur les sandales colorées." href="#">Voir la disponibilité</a></div>
+        <div class="card-body">
+          <h3>Sandales colorées</h3>
+          <p>Une touche de couleur pour vos sorties.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des informations sur les sandales colorées." href="#">Voir la disponibilité</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Sandales tropicales, style et élégance.png" alt="Sandales tropicales" loading="lazy">
-        <div class="card-body"><h3>Sandales tropicales</h3><p>Des modèles originaux et remarquables.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix des sandales tropicales." href="#">Demander le prix</a></div>
+        <div class="card-body">
+          <h3>Sandales tropicales</h3>
+          <p>Des modèles originaux et remarquables.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître le prix des sandales tropicales." href="#">Demander le prix</a>
+        </div>
       </article>
 
       <article class="card" id="perruques">
         <img src="images/PERRUQUE 2.png" alt="Perruque" loading="lazy">
-        <div class="card-body"><h3>Perruques & beauté</h3><p>Choisissez votre modèle préféré.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite découvrir vos perruques et connaître les prix." href="#">Nous contacter</a></div>
+        <div class="card-body">
+          <h3>Perruques & beauté</h3>
+          <p>Choisissez votre modèle préféré.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite découvrir vos perruques et connaître les prix." href="#">Nous contacter</a>
+        </div>
       </article>
 
       <article class="card" id="onglerie">
         <img src="images/ONGLERIE.png" alt="Modèles d’onglerie" loading="lazy">
-        <div class="card-body"><h3>Onglerie</h3><p>Des inspirations élégantes et soignées.</p><div class="price">Informations sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des informations sur vos modèles d’onglerie." href="#">En savoir plus</a></div>
+        <div class="card-body">
+          <h3>Onglerie</h3>
+          <p>Des inspirations élégantes et soignées.</p>
+          <div class="price">Informations sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des informations sur vos modèles d’onglerie." href="#">En savoir plus</a>
+        </div>
       </article>
 
       <article class="card">
-        <img src="images/PERRUQUE ENTRETIEN.png" alt="Entretien de perruques" loading="lazy">
-        <div class="card-body"><h3>Entretien de perruques</h3><p>Contactez-nous pour les services disponibles.</p><div class="price">Service sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître vos services d’entretien de perruques." href="#">Parler à notre équipe</a></div>
+        <img src="images/PERRUQUE-ENTRETIEN.png" alt="Entretien de perruques" loading="lazy">
+        <div class="card-body">
+          <h3>Entretien de perruques</h3>
+          <p>Contactez-nous pour les services disponibles.</p>
+          <div class="price">Service sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite connaître vos services d’entretien de perruques." href="#">Parler à notre équipe</a>
+        </div>
       </article>
 
       <article class="card">
         <img src="images/Deux garçons en tenue assortie chic.png" alt="Tenues assorties" loading="lazy">
-        <div class="card-body"><h3>Tenues assorties</h3><p>Des idées coordonnées pour vos occasions.</p><div class="price">Prix sur demande</div><a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des renseignements sur vos tenues assorties." href="#">Découvrir</a></div>
+        <div class="card-body">
+          <h3>Tenues assorties</h3>
+          <p>Des idées coordonnées pour vos occasions.</p>
+          <div class="price">Prix sur demande</div>
+          <a class="btn btn-green whatsapp-link" data-message="Bonjour, je souhaite des renseignements sur vos tenues assorties." href="#">Découvrir</a>
+        </div>
       </article>
     </div>
   </div>
@@ -436,15 +512,24 @@ footer strong { color: #f5dfaa; font: bold 19px Georgia, serif; }
     <div class="section-head">
       <div class="kicker" style="color:#f5dfaa">Créativité & accompagnement</div>
       <h2>ATTIWOTO SERVICES</h2>
-      <p>Une idée ou un projet ? Écrivez-nous pour en discuter.</p>
+      <p>Impression, personnalisation et communication visuelle pour vos projets.</p>
     </div>
 
     <div class="services-grid">
-      <img class="services-photo" src="images/SERVICES ATTIWOTO.jpg" alt="ATTIWOTO SERVICES" loading="lazy">
+      <img class="services-photo" src="images/ATTIWOTO-SERVICES.png" alt="Affiche ATTIWOTO SERVICES" loading="lazy">
       <div class="service-list">
-        <article class="service-card"><h3>Création & design</h3><p>Des idées visuelles adaptées à vos projets.</p></article>
-        <article class="service-card"><h3>Personnalisation</h3><p>Échangeons sur votre demande et les possibilités de réalisation.</p></article>
-        <article class="service-card"><h3>Conseils & commandes</h3><p>Contactez-nous pour obtenir les informations nécessaires.</p></article>
+        <article class="service-card">
+          <h3>Création & design</h3>
+          <p>Des idées visuelles adaptées à vos projets.</p>
+        </article>
+        <article class="service-card">
+          <h3>Personnalisation</h3>
+          <p>Tee-shirts, polos, casquettes et supports personnalisés.</p>
+        </article>
+        <article class="service-card">
+          <h3>Impression & communication</h3>
+          <p>Échangeons sur votre demande et les possibilités de réalisation.</p>
+        </article>
         <a class="btn btn-gold whatsapp-link" data-message="Bonjour ATTIWOTO SERVICES, je souhaite parler de mon projet." href="#">Parlons de votre projet</a>
       </div>
     </div>
